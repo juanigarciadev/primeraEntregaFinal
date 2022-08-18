@@ -36,8 +36,7 @@ function successfulLogin() {
 
 // mientras que nameLogin o mailLogin o passwordLogin sean desigual a nulo, ageLogin menor o igual que 17 y intentos desigual a true
 // va a obtener un alert de error y se le va a volver a solicitar los datos en bucle.
-while((nameLogin != "" || mailLogin != "" || passwordLogin != "" || parseInt(ageLogin) <= 17) && intentos != true) {
-    intentos = false;
+while(nameLogin == "" || mailLogin == "" || passwordLogin == "" || ageLogin <= 17 || intentos == false) {
     alert("Uno de los datos ingresados no es correcto o eres menor de edad. Vuelva a intentarlo");
 
     nameLogin = prompt("Ingresá tu nombre y apellido")
