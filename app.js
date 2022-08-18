@@ -24,7 +24,7 @@ continuarFormulario("Estás por rellenar un formulario para iniciar sesión, ¿d
 // Se definen las variables que van a almacenar los datos del formulario y la "llave de cierre"
 let nameLogin = prompt("Ingresá tu nombre y apellido")
 let mailLogin = prompt("Ingresá tu correo electrónico")
-let passwordLogin = prompt("Ingresá tu contraseña")
+let dniLogin = prompt("Ingresá tu DNI")
 let ageLogin = parseInt(prompt("Ingresá tu edad"))
 let intentos = false;
 
@@ -34,18 +34,18 @@ function successfulLogin() {
     intentos=true;
 }
 
-// mientras que nameLogin o mailLogin o passwordLogin sean desigual a nulo, ageLogin menor o igual que 17 y intentos desigual a true
+// mientras que nameLogin o mailLogin o dniLogin sean desigual a nulo, ageLogin menor o igual que 17 y intentos desigual a true
 // va a obtener un alert de error y se le va a volver a solicitar los datos en bucle.
-while(nameLogin == "" || mailLogin == "" || passwordLogin == "" || ageLogin <= 17 || intentos == false) {
+while(nameLogin == "" || mailLogin == "" || dniLogin == "" || ageLogin <= 17 || intentos == false) {
     alert("Uno de los datos ingresados no es correcto o eres menor de edad. Vuelva a intentarlo");
 
     nameLogin = prompt("Ingresá tu nombre y apellido")
     mailLogin = prompt("Ingresá tu correo electrónico")
-    passwordLogin = prompt("Ingresá tu contraseña")
+    dniLogin = prompt("Ingresá tu DNI")
     ageLogin = parseInt(prompt("Ingresá tu edad"))
 
         // si todos los datos son ingresados correctamente y la edad ingresada es mayor de 17, se ejecuta la función de inicio de sesión exitoso
-    if((nameLogin && mailLogin && passwordLogin && parseInt(ageLogin) > 17)) {
+    if((nameLogin && mailLogin && dniLogin && parseInt(ageLogin) > 17)) {
         successfulLogin()
     }
 }
@@ -83,22 +83,20 @@ const ensamble3 = new Ensamble("Intel Core i5-10400F", 16, "2666mhz", "1TB", "50
 
 
 
-// Se crean las variables mediante las cuales se van a registrar nuevos usuarios.
-let nuevoNombreCliente = prompt("Ingresa tu nombre para ser registrado en el sistema de clientes.")
-let nuevaEdadCliente = Number(prompt("Ingresa tu edad"))
-let nuevoDniCliente = Number(prompt("Ingresa tu DNI"))
+
 
 
 // Se crea la constante que va a registrar a los clientes.
 const clientesRegistrados = [
-    { nombre: "Juan Ignacio", edad: 18, dni: 45992025},
-    { nombre: "Pedro Altamirano", edad: 25, dni: 39027651},
-    { nombre: "Maria Cuasimodo", edad: 34, dni: 27038741},
-    { nombre: "Federico Pederal", edad: 49, dni: 18932111}
+    { nombre: "Juan Ignacio", mail: "nachogarcia.1017@gmail.com", edad: 18, dni: 45992025},
+    { nombre: "Pedro Altamirano", mail: "pedro33@hotmail.com", edad: 25, dni: 39027651},
+    { nombre: "Maria Cuasimodo", mail: "mariacuasi44@yahoo.com.ar", edad: 34, dni: 27038741},
+    { nombre: "Federico Pederal", mail: "federicopederal.10@gmail.com", edad: 49, dni: 18932111}
 ]
 
+
 // Se registra un nuevo cliente en el array clientesRegistrados pusheando los datos que el usuario ingresó en los prompt.
-clientesRegistrados.push({nombre: nuevoNombreCliente, edad: nuevaEdadCliente, dni: nuevoDniCliente})
+clientesRegistrados.push({nombre: nameLogin, mail: mailLogin, edad: ageLogin, dni: dniLogin})
 
 for (const repasarClientes of clientesRegistrados) {
     console.log(repasarClientes)
