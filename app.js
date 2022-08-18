@@ -51,13 +51,7 @@ while(nameLogin == "" || mailLogin == "" || dniLogin == "" || ageLogin <= 17 || 
 }
 
 
-// 
-// 
-// 
 // Incorporación de array y constructores de objetos
-// 
-// 
-// 
 
 // Se define el constructor que será utilizado para los ensambles
 class Ensamble {
