@@ -81,11 +81,6 @@ const ensamble3 = new Ensamble("Intel Core i5-10400F", 16, "2666mhz", "1TB", "50
 
 
 
-
-
-
-
-
 // Se crea la constante que va a registrar a los clientes.
 const clientesRegistrados = [
     { nombre: "Juan Ignacio", mail: "nachogarcia.1017@gmail.com", edad: 18, dni: 45992025},
@@ -101,8 +96,6 @@ clientesRegistrados.push({nombre: nameLogin, mail: mailLogin, edad: ageLogin, dn
 for (const repasarClientes of clientesRegistrados) {
     console.log(repasarClientes)
 }
-
-
 
 
 
