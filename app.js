@@ -1,54 +1,54 @@
-// Se define la constante con parametros que más adelante van a ser definidos
-const continuarFormulario = (pregunta, si, no) => {
-    if (confirm(pregunta)) {
-        si()
-    } else {
-        no()
-    }
-}
+// // Se define la constante con parametros que más adelante van a ser definidos
+// const continuarFormulario = (pregunta, si, no) => {
+//     if (confirm(pregunta)) {
+//         si()
+//     } else {
+//         no()
+//     }
+// }
 
-// Se definen las funciones que más adelante van a ser las reemplazantes de los parámetros (si, no)
-function resSi() {
-    alert("Esperamos que disfrutes tu estadía :)")
-}
-function resNo() {
-    alert("Apreciamos tu visita, ¡esperamos que cambies de opinión pronto! :)")
-    close()
-}
+// // Se definen las funciones que más adelante van a ser las reemplazantes de los parámetros (si, no)
+// function resSi() {
+//     alert("Esperamos que disfrutes tu estadía :)")
+// }
+// function resNo() {
+//     alert("Apreciamos tu visita, ¡esperamos que cambies de opinión pronto! :)")
+//     close()
+// }
 
-// Se hace la pregunta dándole valor a los parámetros ingresados en la constante continuarFormulario
-// cambiando los parámetros (respuesta, si, no) por el string y las funciones resSi y resNo
-continuarFormulario("Estás por rellenar un formulario para iniciar sesión, ¿desea continuar?",resSi,resNo)
+// // Se hace la pregunta dándole valor a los parámetros ingresados en la constante continuarFormulario
+// // cambiando los parámetros (respuesta, si, no) por el string y las funciones resSi y resNo
+// continuarFormulario("Estás por rellenar un formulario para iniciar sesión, ¿desea continuar?",resSi,resNo)
 
 
-// Se definen las variables que van a almacenar los datos del formulario y la "llave de cierre"
-let nameLogin = prompt("Ingresá tu nombre y apellido")
-let mailLogin = prompt("Ingresá tu correo electrónico")
-let passwordLogin = prompt("Ingresá tu contraseña")
-let ageLogin = parseInt(prompt("Ingresá tu edad"))
-let intentos = false;
+// // Se definen las variables que van a almacenar los datos del formulario y la "llave de cierre"
+// let nameLogin = prompt("Ingresá tu nombre y apellido")
+// let mailLogin = prompt("Ingresá tu correo electrónico")
+// let passwordLogin = prompt("Ingresá tu contraseña")
+// let ageLogin = parseInt(prompt("Ingresá tu edad"))
+// let intentos = false;
 
-// Funcion para el proceso que se ejecuta cuando el inicio de sesión es exitoso.
-function successfulLogin() {
-    alert("Felicitaciones " + nameLogin + ", ¡ingresaste correctamente!")
-    intentos=true;
-}
+// // Funcion para el proceso que se ejecuta cuando el inicio de sesión es exitoso.
+// function successfulLogin() {
+//     alert("Felicitaciones " + nameLogin + ", ¡ingresaste correctamente!")
+//     intentos=true;
+// }
 
-// mientras que nameLogin o mailLogin o passwordLogin sean desigual a nulo, ageLogin menor o igual que 17 y intentos desigual a true
-// va a obtener un alert de error y se le va a volver a solicitar los datos en bucle.
-while(nameLogin == "" || mailLogin == "" || passwordLogin == "" || ageLogin <= 17 || intentos == false) {
-    alert("Uno de los datos ingresados no es correcto o eres menor de edad. Vuelva a intentarlo");
+// // mientras que nameLogin o mailLogin o passwordLogin sean desigual a nulo, ageLogin menor o igual que 17 y intentos desigual a true
+// // va a obtener un alert de error y se le va a volver a solicitar los datos en bucle.
+// while(nameLogin == "" || mailLogin == "" || passwordLogin == "" || ageLogin <= 17 || intentos == false) {
+//     alert("Uno de los datos ingresados no es correcto o eres menor de edad. Vuelva a intentarlo");
 
-    nameLogin = prompt("Ingresá tu nombre y apellido")
-    mailLogin = prompt("Ingresá tu correo electrónico")
-    passwordLogin = prompt("Ingresá tu contraseña")
-    ageLogin = parseInt(prompt("Ingresá tu edad"))
+//     nameLogin = prompt("Ingresá tu nombre y apellido")
+//     mailLogin = prompt("Ingresá tu correo electrónico")
+//     passwordLogin = prompt("Ingresá tu contraseña")
+//     ageLogin = parseInt(prompt("Ingresá tu edad"))
 
-        // si todos los datos son ingresados correctamente y la edad ingresada es mayor de 17, se ejecuta la función de inicio de sesión exitoso
-    if((nameLogin && mailLogin && passwordLogin && parseInt(ageLogin) > 17)) {
-        successfulLogin()
-    }
-}
+//         // si todos los datos son ingresados correctamente y la edad ingresada es mayor de 17, se ejecuta la función de inicio de sesión exitoso
+//     if((nameLogin && mailLogin && passwordLogin && parseInt(ageLogin) > 17)) {
+//         successfulLogin()
+//     }
+// }
 
 
 // 
@@ -80,21 +80,41 @@ const ensamble3 = new Ensamble("Intel Core i5-10400F", 16, "2666mhz", "1TB", "50
 
 
 
-// Se crea la constante que va a registrar a los clientes
+
+
+
+// Se crean las variables mediante las cuales se van a registrar nuevos usuarios.
+let nuevoNombreCliente = prompt("Ingresa tu nombre para ser registrado en el sistema de clientes.")
+let nuevaEdadCliente = Number(prompt("Ingresa tu edad"))
+let nuevoDniCliente = Number(prompt("Ingresa tu DNI"))
+
+
+// Se crea la constante que va a registrar a los clientes.
 const clientesRegistrados = [
-    { nombre: "Juan Ignacio", edad: 18, dni: 45992025, variasCompras: false},
-    { nombre: "Pedro Altamirano", edad: 25, dni: 39027651, variasCompras: true},
-    { nombre: "Maria Cuasimodo", edad: 34, dni: 27038741, variasCompras: false},
-    { nombre: "Federico Pederal", edad: 49, dni: 18932111, variasCompras: true}
+    { nombre: "Juan Ignacio", edad: 18, dni: 45992025},
+    { nombre: "Pedro Altamirano", edad: 25, dni: 39027651},
+    { nombre: "Maria Cuasimodo", edad: 34, dni: 27038741},
+    { nombre: "Federico Pederal", edad: 49, dni: 18932111}
 ]
 
-// Se usa el método .find para encontrar a un cliente registrado en la variable clientesRegistrados
-const busquedaClientesRegistrados = clientesRegistrados.find(busqueda => busqueda.dni === 45992025)
+// Se registra un nuevo cliente en el array clientesRegistrados pusheando los datos que el usuario ingresó en los prompt.
+clientesRegistrados.push({nombre: nuevoNombreCliente, edad: nuevaEdadCliente, dni: nuevoDniCliente})
+
+for (const repasarClientes of clientesRegistrados) {
+    console.log(repasarClientes)
+}
+
+
+
+
+
+// Se usa el método .find para encontrar a un cliente registrado en la variable clientesRegistrados.
+const busquedaClientesRegistrados = clientesRegistrados.find(busqueda => busqueda.dni === 27038741)
 console.log(busquedaClientesRegistrados)
 
 // Se usa el método .filter para filtrar a los clientes registrados en la variable clientesRegistrados que tengan booleano true en variasCompras
-const filtroVariasCompras = clientesRegistrados.filter(filtrar => filtrar.variasCompras === true);
-console.log(filtroVariasCompras)
+const filtroEdad = clientesRegistrados.filter(filtrar => filtrar.edad === 18);
+console.log(filtroEdad)
 
 
 
