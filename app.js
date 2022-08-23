@@ -1,32 +1,32 @@
-// // Se definen las variables que van a almacenar los datos del formulario de inicio de sesión y la "llave de cierre"
-// let nameLogin = prompt("Ingresá tu nombre y apellido")
-// let mailLogin = prompt("Ingresá tu correo electrónico")
-// let dniLogin = Number(prompt("Ingresá tu DNI (solamente ingrese números y evite los puntos)"))
-// let ageLogin = parseInt(prompt("Ingresá tu edad"))
-// let intentos = false;
+// Se definen las variables que van a almacenar los datos del formulario de inicio de sesión y la "llave de cierre"
+let nameLogin = prompt("Ingresá tu nombre y apellido")
+let mailLogin = prompt("Ingresá tu correo electrónico")
+let dniLogin = Number(prompt("Ingresá tu DNI (solamente ingrese números y evite los puntos)"))
+let ageLogin = parseInt(prompt("Ingresá tu edad"))
+let intentos = false;
 
-// // Funcion para el proceso que se ejecuta cuando el inicio de sesión es exitoso.
-// function successfulLogin() {
-//     alert("Felicitaciones " + nameLogin + ", ¡ingresaste correctamente!")
-//     intentos = true;
-// }
+// Funcion para el proceso que se ejecuta cuando el inicio de sesión es exitoso.
+function successfulLogin() {
+    alert("Felicitaciones " + nameLogin + ", ¡ingresaste correctamente!")
+    intentos = true;
+}
 
-// // si todos los datos son ingresados correctamente y la edad ingresada es mayor de 17, se ejecuta la función de inicio de sesión exitoso
-// if ((nameLogin && mailLogin && dniLogin && parseInt(ageLogin) > 17)) {
-//     successfulLogin()
-// }
+// si todos los datos son ingresados correctamente y la edad ingresada es mayor de 17, se ejecuta la función de inicio de sesión exitoso
+if ((nameLogin && mailLogin && dniLogin && parseInt(ageLogin) > 17)) {
+    successfulLogin()
+}
 
-// // mientras que nameLogin o mailLogin o dniLogin sean desigual a nulo o ageLogin menor o igual que 17 o intentos desigual a true
-// // va a obtener un alert de error y se le va a volver a solicitar los datos en bucle.
-// while (nameLogin == "" || mailLogin == "" || dniLogin == "" || ageLogin <= 17 || intentos == false) {
-//     alert("Uno de los datos ingresados no es correcto o eres menor de edad. Vuelva a intentarlo");
+// mientras que nameLogin o mailLogin o dniLogin sean desigual a nulo o ageLogin menor o igual que 17 o intentos desigual a true
+// va a obtener un alert de error y se le va a volver a solicitar los datos en bucle.
+while (nameLogin == "" || mailLogin == "" || dniLogin == "" || ageLogin <= 17 || intentos == false) {
+    alert("Uno de los datos ingresados no es correcto o eres menor de edad. Vuelva a intentarlo");
 
-//     nameLogin = prompt("Ingresá tu nombre y apellido")
-//     mailLogin = prompt("Ingresá tu correo electrónico")
-//     dniLogin = Number(prompt("Ingresá tu DNI (solamente ingrese números y evite los puntos)"))
-//     ageLogin = parseInt(prompt("Ingresá tu edad"))
+    nameLogin = prompt("Ingresá tu nombre y apellido")
+    mailLogin = prompt("Ingresá tu correo electrónico")
+    dniLogin = Number(prompt("Ingresá tu DNI (solamente ingrese números y evite los puntos)"))
+    ageLogin = parseInt(prompt("Ingresá tu edad"))
 
-// }
+}
 
 
 // Incorporación de array y constructores de objetos
@@ -63,7 +63,7 @@ const clientesRegistrados = [
 
 
 // // Se registra un nuevo cliente en el array clientesRegistrados pusheando los datos que el usuario ingresó en los prompt.
-// clientesRegistrados.push({ nombre: nameLogin, mail: mailLogin, edad: ageLogin, dni: dniLogin })
+clientesRegistrados.push({ nombre: nameLogin, mail: mailLogin, edad: ageLogin, dni: dniLogin })
 
 // Se usa un bucle for...of para repasar toda la lista de clientes e imprimirlos mediante la consola
 for (const repasarClientes of clientesRegistrados) {
